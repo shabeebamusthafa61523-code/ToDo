@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <h1>TO DO LIST</h1>
+    <input type="text" id="first" placeholder="Enter a task">
+    <button class="add" onclick="add()">ADD</button>
+    <ul id="output"></ul>
+
+    <script>
+        function add() {
+            let input=document.getElementById("first").value
+
+        // let task=first.value
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.style.marginLeft="15px"
+       
+
+        let li=document.createElement("li")
+        li.textContent=input
+
+        
+
+        let rmv=document.createElement("button")
+        rmv.textContent="X"
+        rmv.style.marginLeft="10px";
+        rmv.style.color="white"
+        rmv.style.backgroundColor="red"
+
+        rmv.onclick= function rem() {
+            li.remove();
+
+        }
+        li.appendChild(checkbox)
+        li.appendChild(rmv)
+        document.getElementById("output").appendChild(li)
+        }
+       
+    </script>
+</body>
+</html>
